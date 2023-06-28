@@ -20,6 +20,22 @@
         <q-route-tab to="/page2" label="Page Two" />
         <q-route-tab to="/page3" label="Page Three" />
       </q-tabs>
+      <q-tabs>
+        <div class="q-pa-md">
+          <div class="q-gutter-y-md column" style="width: 300px; max-width: 100%">
+            <q-toolbar class="bg-primary text-white rounded-borders justify-center">
+              <q-btn round dense flat icon="menu" class="q-mr-xs" />
+
+              <q-input dark dense standout v-model="text" input-class="text-right custom-input-class" class="q-ml-md">
+                <template v-slot:append>
+                  <q-icon v-if="text === ''" name="search" />
+                  <q-icon v-else name="clear" class="cursor-pointer" @click="text = ''" />
+                </template>
+              </q-input>
+            </q-toolbar>
+          </div>
+        </div>
+      </q-tabs>
     </q-header>
 
     <q-drawer show-if-above v-model="leftDrawerOpen" side="left" bordered>
@@ -52,18 +68,19 @@
 import { ref } from 'vue'
 
 export default {
-  setup () {
+  setup() {
     const leftDrawerOpen = ref(false)
     const rightDrawerOpen = ref(false)
 
     return {
+      text: ref(''),
       leftDrawerOpen,
-      toggleLeftDrawer () {
+      toggleLeftDrawer() {
         leftDrawerOpen.value = !leftDrawerOpen.value
       },
 
       rightDrawerOpen,
-      toggleRightDrawer () {
+      toggleRightDrawer() {
         rightDrawerOpen.value = !rightDrawerOpen.value
       }
     }
