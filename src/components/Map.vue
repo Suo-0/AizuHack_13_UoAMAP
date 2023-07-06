@@ -1,7 +1,7 @@
 <template>
   <div class="q-pa-md q-gutter-sm">
 
-    <q-img src="../assets/image/zentai.jpg" spinner-color="white" style="height: 800px; max-width: 100%" />
+    <q-img src="../assets/image/zentai.jpg" spinner-color="white" style="height: 100%; max-width: 100%" />
   </div>
 </template>
 
