@@ -1,7 +1,7 @@
 <template>
-    <div class="q-ma-md">
+    <div class="q-ma-md" style="width: 720px; margin: 0 auto;">
         <q-scroll-area style="height: 100px;">
-            <div v-for="n in 100" :key="n" id="div" class="q-py-xs">
+            <div v-for="n in 100" :key="n" id="div" class="q-py-xs" >
                 <div class="contents">
                     <div style="width: 105px;">
                         <q-btn outline dense size="md" class="fa-14 q-px-sm" color="primary" style="width: 100px;">
