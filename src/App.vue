@@ -48,6 +48,7 @@
 
     <q-page-container>
       <router-view />
+      <SearchResult/>
     </q-page-container>
 
     <q-footer elevated class="bg-grey-8 text-white">
@@ -66,24 +67,24 @@
 
 <script>
 import { ref } from 'vue'
+import SearchResult from './components/SearchResult.vue';
 
 export default {
-  setup() {
-    const leftDrawerOpen = ref(false)
-    const rightDrawerOpen = ref(false)
-
-    return {
-      text: ref(''),
-      leftDrawerOpen,
-      toggleLeftDrawer() {
-        leftDrawerOpen.value = !leftDrawerOpen.value
-      },
-
-      rightDrawerOpen,
-      toggleRightDrawer() {
-        rightDrawerOpen.value = !rightDrawerOpen.value
-      }
-    }
-  }
+    setup() {
+        const leftDrawerOpen = ref(false);
+        const rightDrawerOpen = ref(false);
+        return {
+            text: ref(""),
+            leftDrawerOpen,
+            toggleLeftDrawer() {
+                leftDrawerOpen.value = !leftDrawerOpen.value;
+            },
+            rightDrawerOpen,
+            toggleRightDrawer() {
+                rightDrawerOpen.value = !rightDrawerOpen.value;
+            }
+        };
+    },
+    components: { SearchResult }
 }
 </script>
