@@ -3,16 +3,16 @@
 
     <q-header elevated class="bg-primary text-white" height-hint="98">
       <q-toolbar>
-        <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
+
 
         <q-toolbar-title>
           <q-avatar>
             <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">
           </q-avatar>
-          セットアップだけ
+          UoA_Aizu_MAP
         </q-toolbar-title>
 
-        <q-btn dense flat round icon="menu" @click="toggleRightDrawer" />
+
       </q-toolbar>
 
       <q-tabs align="left">
@@ -24,7 +24,27 @@
         <div class="q-pa-md">
           <div class="q-gutter-y-md column" style="width: 300px; max-width: 100%">
             <q-toolbar class="bg-primary text-white rounded-borders justify-center">
-              <q-btn round dense flat icon="menu" class="q-mr-xs" />
+
+
+              <q-btn round dense flat icon="menu" class="q-mr-xs">
+                <q-menu transition-show="flip-right" transition-hide="flip-left">
+                  <q-list style="min-width: 100px">
+                    <div class="MENU">
+                      <q-item clickable>
+                        <q-item-section>🕒履歴</q-item-section>
+                      </q-item>
+                      <q-item clickable>
+                        <q-item-section>📗ブックマーク</q-item-section>
+                      </q-item>
+                      <q-separator />
+                      <q-item clickable>
+                        <q-item-section>🔩設定</q-item-section>
+                      </q-item>
+                    </div>
+                  </q-list>
+                </q-menu>
+              </q-btn>
+
 
               <q-input dark dense standout v-model="text" input-class="text-left custom-input-class" class="q-ml-md">
                 <template v-slot:append>
