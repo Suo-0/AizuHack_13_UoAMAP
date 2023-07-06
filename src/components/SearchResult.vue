@@ -45,7 +45,7 @@
     flex-direction: row;
 }
 </style>
-<!--
+
 <script>
   new Vue({
     data: {
@@ -70,4 +70,3 @@
     }
   })
 </script>
--->
