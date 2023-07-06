@@ -17,6 +17,17 @@
             </div>
         </q-scroll-area>
     </div>
+
+
+<!-- <div id="app">
+    <div class="search">
+      <v-text-field type="text" v-model="keyword" label="検索"></v-text-field>
+    </div>
+    <tr v-for="room in filteredRoom" :key="room.id">
+      <td v-text="room.name"></td>
+    </tr>
+  </div>
+-->
 </template>
 
 
@@ -34,3 +45,29 @@
     flex-direction: row;
 }
 </style>
+<!--
+<script>
+  new Vue({
+    data: {
+      keyword: "",
+      room: [
+        {id: 1, name: "オレンジ"},
+        {id: 2, name: "メロン" },
+        {id: 3, name: "アップル"},
+      ]
+    },
+    computed: {
+      filteredRoom: function() {
+        var room = [];
+        for(var i in this.room) {
+          var room_name = this.room[i];
+          if(food.name.indexOf(this.keyword) !== -1) {
+            room.push(food);
+          }
+        }
+        return room;
+      }
+    }
+  })
+</script>
+-->
