@@ -49,6 +49,7 @@
     <q-page-container>
       <router-view />
       <SearchResult/>
+      <Mapping/>
     </q-page-container>
 
     <q-footer elevated class="bg-grey-8 text-white">
@@ -68,6 +69,7 @@
 <script>
 import { ref } from 'vue'
 import SearchResult from './components/SearchResult.vue';
+import Mapping from './components/Map.vue';
 
 export default {
     setup() {
@@ -85,6 +87,6 @@ export default {
             }
         };
     },
-    components: { SearchResult }
+    components: { SearchResult, Mapping}
 }
 </script>
