@@ -50,14 +50,14 @@
         </div>
       </q-tabs>
     </q-header>
-
-    <q-page-container>
-      <router-view />
+      
+    <q-page-container >
       <SearchResult />
       <Mapping />
     </q-page-container>
 
   </q-layout>
+  
 </template>
 
 <script>
@@ -83,6 +83,7 @@ export default {
   },
   components: { SearchResult, Mapping }
 }
+
 </script>
 
 <style>
