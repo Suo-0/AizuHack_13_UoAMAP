@@ -53,7 +53,7 @@
 
     <q-page-container>
       <router-view />
-      <SearchResult />
+      <SearchResult :filter="text" />
       <Mapping />
     </q-page-container>
 
@@ -61,7 +61,7 @@
 </template>
 
 <script>
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import SearchResult from './components/SearchResult.vue';
 import Mapping from './components/Map.vue';
 
@@ -69,8 +69,16 @@ export default {
   setup() {
     const leftDrawerOpen = ref(false);
     const rightDrawerOpen = ref(false);
+    const text = ref("");
+    const filter = ref("");
+
+    watch(text, (newValue) => {
+      filter.value = newValue;
+    });
+
     return {
-      text: ref(""),
+      text,
+      filter,
       leftDrawerOpen,
       toggleLeftDrawer() {
         leftDrawerOpen.value = !leftDrawerOpen.value;
