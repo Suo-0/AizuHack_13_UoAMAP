@@ -2,27 +2,26 @@
   <div>
     <div class="q-pa-md q-gutter-sm">
       <q-btn label="Close Icon" color="primary" @click="icon = true" />
+
       <q-dialog v-model="icon">
-        <q-card  style="width: 800px; max-width: 100vw;">
-        <div class="my-dialog-content">
-          
+        <q-card style="width: 800px; max-width: 100vw;">
+          <div class="my-dialog-content">
             <div id="map" @mousemove="logMousePosition" @click="addPin" style="margin: 0 auto">
-              <div v-for="(pin, index) in pins" :key="index" class="pin" :style="{ left: pin.x + 'px', top: pin.y + 'px' }">
-  <span class="pin-label">{{ pin.x }}, {{ pin.y }}</span>
-</div>
-
-
+              <div v-for="(pin, index) in pins" :key="index" class="pin"
+                :style="{ left: pin.x + 'px', top: pin.y + 'px' }">
+                <span class="pin-label">{{ pin.x }}, {{ pin.y }}</span>
+              </div>
             </div>
-          
             <div class="image-container">
               <div id="screen-log" class="log-container">
-              Screen X/Y: {{ screenX }}, {{ screenY }}
-              Client X/Y: {{ clientX }}, {{ clientY }}
+                Screen X/Y: {{ screenX }}, {{ screenY }}
+                Client X/Y: {{ clientX }}, {{ clientY }}
               </div>
             </div>
           </div>
         </q-card>
       </q-dialog>
+
     </div>
   </div>
 </template>
@@ -113,14 +112,15 @@ export default {
 
   border: 1px solid #000;
 }
+
 .pin-label {
   position: absolute;
-  top: -40px; /* ピンの上に表示する場合の調整 */
+  top: -40px;
+  /* ピンの上に表示する場合の調整 */
   left: 0;
   font-size: 12px;
   color: #000;
   background-color: #fff;
   padding: 2px 4px;
 }
-
 </style>
