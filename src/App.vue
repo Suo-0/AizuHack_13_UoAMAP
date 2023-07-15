@@ -58,6 +58,7 @@
     </q-page-container>
 
   </q-layout>
+  
 </template>
 
 <script>
@@ -91,6 +92,7 @@ export default {
   },
   components: { SearchResult, Mapping }
 }
+
 </script>
 
 <style>
