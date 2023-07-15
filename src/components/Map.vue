@@ -1,15 +1,15 @@
 <template>
   <div>
     <div class="q-pa-md q-gutter-sm">
-      
+
 
       <q-dialog v-model="icon">
-        <q-card style="width: 800px; max-width: 100vw;">
+        <q-card style="width: 820px; max-width: 100vw;" id="img-card">
           <div class="my-dialog-content">
             <div id="map" @mousemove="logMousePosition" @click="addPin" style="margin: 0 auto">
               <div v-for="(pin, index) in pins" :key="index" class="pin"
                 :style="{ left: pin.x + 'px', top: pin.y + 'px' }">
-                <span class="pin-label">{{ pin.x }}, {{ pin.y }}</span>
+                <span class="pin-label">{{ roomname }}, {{ roomdescription }}</span>
               </div>
             </div>
             <div class="image-container">
@@ -17,6 +17,7 @@
                 Screen X/Y: {{ screenX }}, {{ screenY }}
                 Client X/Y: {{ clientX }}, {{ clientY }}
                 Pin X/Y: {{ selectedItem.x }}, {{ selectedItem.y }}
+
               </div>
             </div>
           </div>
@@ -46,18 +47,24 @@ export default {
     const screenY = ref(0);
     const clientX = ref(0);
     const clientY = ref(0);
+    let roomname = ref("");
+    let roomdescription = ref("");
 
-    function addPin(event) {
-      const mapElement = document.getElementById('map');
-      const rect = mapElement.getBoundingClientRect();
-      const x = event.clientX - rect.left;
-      const y = event.clientY - rect.top;
+    // function addPin(event) {
+    //   const mapElement = document.getElementById('map');
+    //   const rect = mapElement.getBoundingClientRect();
+    //   const x = event.clientX - rect.left;
+    //   const y = event.clientY - rect.top;
 
+    //   pins.value = [{ x, y }];
+    // }
+
+    function addPin2(x, y, name, description) {
       pins.value = [{ x, y }];
-    }
-
-    function addPin2(x, y) {
-      pins.value = [{ x, y }];
+      roomname.value = name;
+      roomdescription.value = description;
+      console.log(roomname.value);
+      console.log(roomdescription.value);
     }
 
     function logMousePosition(event) {
@@ -69,7 +76,7 @@ export default {
 
     watch(() => props.selectedItem, (newValue) => {
       icon.value = true;
-      addPin2(newValue.x, newValue.y);
+      addPin2(newValue.x, newValue.y, newValue.name, newValue.description);
     })
 
     return {
@@ -79,7 +86,8 @@ export default {
       screenY,
       clientX,
       clientY,
-      addPin,
+      roomname,
+      roomdescription,
       logMousePosition,
     };
   },
@@ -89,8 +97,8 @@ export default {
 <style>
 #map {
   position: relative;
-  width: 800px;
-  height: 600px;
+  width: 820px;
+  height: 611px;
   background-image: url("../assets/image/zentai.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -128,17 +136,22 @@ export default {
   width: fit-content;
   height: fit-content;
 
-  border: 1px solid #000;
+  border: 3px solid #000;
+  -ms-overflow-style: none;
 }
 
 .pin-label {
   position: absolute;
-  top: -40px;
-  /* ピンの上に表示する場合の調整 */
-  left: 0;
+  top: -50px;
+  left: -50px;
   font-size: 12px;
   color: #000;
-  background-color: #fff;
+  background-color: #f3f0e8ed;
   padding: 2px 4px;
+  width: 150px;
+}
+
+#img-card {
+  -ms-overflow-style: none;
 }
 </style>

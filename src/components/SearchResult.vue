@@ -21,8 +21,8 @@
 
 
 
-  <div class="q-pa-sm" style="background-color: #95e7ca8b; width: 720px; margin: 0 auto;">
-    <q-scroll-area style="height: 130px;">
+  <div class="q-pa-sm" style="background-color: #95e7ca8b; width: 720px; margin: 0 auto; margin-top: 50px;">
+    <q-scroll-area style="height: 500px;">
       <q-table style="background-color: #cedbf236;" :grid="$q.screen.xs" flat bordered :rows="rows" :columns="columns"
         row-key="name" :filter="filter" hide-header hide-pagination :pagination="pagination" :rows-per-page-options="[0]"
         @row-click="RowClick">
@@ -705,7 +705,7 @@ export default {
 
   methods: {
     RowClick(row, index) {
-      this.$emit('itemClick', { x: index.x, y: index.y });
+      this.$emit('itemClick', { x: index.x, y: index.y, name: index.name, description: index.description });
     }
   }
 }
