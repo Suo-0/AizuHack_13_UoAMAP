@@ -3,19 +3,16 @@
   <div>
     <div class="q-pa-md q-gutter-sm">
       <q-btn label="Close Icon" color="primary" @click="icon = true" />
+
       <q-dialog v-model="icon">
         <q-card style="width: 800px; max-width: 100vw;">
           <div class="my-dialog-content">
-
             <div id="map" @mousemove="logMousePosition" @click="addPin" style="margin: 0 auto">
               <div v-for="(pin, index) in pins" :key="index" class="pin"
                 :style="{ left: pin.x + 'px', top: pin.y + 'px' }">
                 <span class="pin-label">{{ pin.x }}, {{ pin.y }}</span>
               </div>
-
-
             </div>
-
             <div class="image-container">
               <div id="screen-log" class="log-container">
                 Screen X/Y: {{ screenX }}, {{ screenY }}
@@ -23,17 +20,28 @@
               </div>
             </div>
           </div>
+          <p>{{ selectedItem.x }}</p>
+          <p>{{ selectedItem.y }}</p>
         </q-card>
       </q-dialog>
+
     </div>
   </div>
 </template>
 
 <script>
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
 
 export default {
-  setup() {
+  props: {
+    selectedItem: {
+      type: Object,
+      default: null
+    },
+
+
+  },
+  setup(props) {
     const icon = ref(false);
     const pins = ref([]);
     const screenX = ref(0);
@@ -50,12 +58,21 @@ export default {
       pins.value = [{ x, y }];
     }
 
+    function addPin2(x, y) {
+      pins.value = [{ x, y }];
+    }
+
     function logMousePosition(event) {
       screenX.value = event.screenX;
       screenY.value = event.screenY;
       clientX.value = event.clientX;
       clientY.value = event.clientY;
     }
+
+    watch(() => props.selectedItem, (newValue) => {
+      icon.value = true;
+      addPin2(newValue.x, newValue.y);
+    })
 
     return {
       icon,
@@ -88,7 +105,7 @@ export default {
   background-image: url("../assets/image/pin.png");
   background-size: cover;
   position: absolute;
-  transform: translate(-50%, -50%);
+  transform: translate(-48%, -90%);
 }
 
 .image-container {

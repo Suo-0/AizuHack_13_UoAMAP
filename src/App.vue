@@ -2,8 +2,7 @@
   <q-layout view="hHh lpR fFf">
 
     <q-header id="hoge" elevated class="text-white" style="background-color: #009999;" height-hint="98">
-     
-<Menu/>
+      <Menu />
 
 
 
@@ -29,8 +28,8 @@
 
     <q-page-container>
       <router-view />
-      <SearchResult :filter="text" />
-      <Mapping />
+      <SearchResult @itemClick="openDialog" :filter="text" />
+      <Mapping :selectedItem="selectedItem" />
     </q-page-container>
 
   </q-layout>
@@ -79,7 +78,17 @@ export default {
       }
     };
   },
-  components: { SearchResult, Mapping, Menu }
+  data() {
+    return {
+      selectedItem: null
+    }
+  },
+  components: { SearchResult, Mapping },
+  methods: {
+    openDialog(item) {
+      this.selectedItem = item
+    }
+  }
 }
 
 </script>
