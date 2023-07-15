@@ -1,5 +1,4 @@
 <template>
-  
   <div>
     <div class="q-pa-md q-gutter-sm">
       <q-btn label="Close Icon" color="primary" @click="icon = true" />
