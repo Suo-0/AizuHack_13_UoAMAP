@@ -86,7 +86,7 @@ export default {
   background-image: url("../assets/image/pin.png");
   background-size: cover;
   position: absolute;
-  transform: translate(-50%, -50%);
+  transform: translate(-48%, -90%);
 }
 
 .image-container {

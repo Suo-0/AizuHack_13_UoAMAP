@@ -36,6 +36,7 @@
         hide-pagination
         :pagination="pagination"
         :rows-per-page-options="[0]"
+        @click="showMap"
       >
       <!-- <template v-slot:top-right>
         <q-input borderless dense debounce="300" v-model="filter" placeholder="Search">
