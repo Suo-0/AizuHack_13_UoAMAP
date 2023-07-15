@@ -81,7 +81,37 @@ const columns = [
 ]
 
 const rows = [
-{
+    {
+        name: 'コンピュータ演習室(std1)',
+        description: '研究棟1F',
+        number: '143'
+    },
+    {
+        name: 'コンピュータ演習室(std2)',
+        description: '研究棟1F',
+        number: '146'
+    },
+    {
+        name: 'コンピュータ演習室(std3)',
+        description: '講義棟1F',
+        number: '101'
+    },
+    {
+        name: 'コンピュータ演習室(std4)',
+        description: '講義棟1F',
+        number: '102'
+    },
+    {
+        name: 'コンピュータ演習室(std5)',
+        description: '研究棟1F',
+        number: '103'
+    },
+    {
+        name: 'コンピュータ演習室(std6) ',
+        description: '研究棟1F',
+        number: '106'
+    },
+    {
         name: '研究室・実験室',
         description: '研究棟1F',
         number: '101'
@@ -92,11 +122,6 @@ const rows = [
         number: '102'
     },
     {
-        name: 'コンピュータ演習室(std5)',
-        description: '研究棟1F',
-        number: '103'
-    },
-    {
         name: '研究室・実験室',
         description: '研究棟1F',
         number: '104'
@@ -105,11 +130,6 @@ const rows = [
         name: '教員室',
         description: '研究棟1F',
         number: '105'
-    },
-    {
-        name: 'コンピュータ演習室(std6) ',
-        description: '研究棟1F',
-        number: '106'
     },
     {
         name: 'シールド実験室',
@@ -202,11 +222,6 @@ const rows = [
         number: '142'
     },
     {
-        name: 'コンピュータ演習室(std1)',
-        description: '研究棟1F',
-        number: '143'
-    },
-    {
         name: '研究室・実験室',
         description: '研究棟1F',
         number: '144'
@@ -215,11 +230,6 @@ const rows = [
         name: '教員室',
         description: '研究棟1F',
         number: '145'
-    },
-    {
-        name: 'コンピュータ演習室(std2)',
-        description: '研究棟1F',
-        number: '146'
     },
     {
         name: '非常勤講師控室',
@@ -242,7 +252,7 @@ const rows = [
         number: '161'
     },
     {
-        name: 'SRLU2',
+        name: 'SRLU2(ジム)',
         description: '研究棟1F',
         number: '162'
     },
@@ -452,14 +462,144 @@ const rows = [
         number: '281'
     },
     {
-        name: 'コンピュータ演習室(std3)',
-        description: '講義棟1F',
-        number: '101'
+        name: '研究室・実験室',
+        description: '研究棟3F',
+        number: '301'
     },
     {
-        name: 'コンピュータ演習室(std4)',
-        description: '講義棟1F',
-        number: '102'
+        name: '教員室',
+        description: '研究棟3F',
+        number: '302'
+    },
+    {
+        name: '教員室',
+        description: '研究棟3F',
+        number: '303'
+    },
+    {
+        name: '研究室・実験室',
+        description: '研究棟3F',
+        number: '304'
+    },
+    {
+        name: '研究室・実験室',
+        description: '研究棟3F',
+        number: '305'
+    },
+    {
+        name: '教員室',
+        description: '研究棟3F',
+        number: '306'
+    },
+    {
+        name: '教員室',
+        description: '研究棟3F',
+        number: '307'
+    },
+    {
+        name: '研究室・実験室',
+        description: '研究棟3F',
+        number: '308'
+    },
+    {
+        name: '研究室・実験室',
+        description: '研究棟3F',
+        number: '321'
+    },
+    {
+        name: '教員室',
+        description: '研究棟3F',
+        number: '322'
+    },
+    {
+        name: '教員室',
+        description: '研究棟3F',
+        number: '323'
+    },
+    {
+        name: '研究室・実験室',
+        description: '研究棟3F',
+        number: '324'
+    },
+    {
+        name: '研究室・実験室',
+        description: '研究棟3F',
+        number: '325'
+    },
+    {
+        name: '教員室',
+        description: '研究棟3F',
+        number: '326'
+    },
+    {
+        name: '教員室',
+        description: '研究棟3F',
+        number: '327'
+    },
+    {
+        name: '研究室・実験室',
+        description: '研究棟3F',
+        number: '328'
+    },
+    {
+        name: '研究室・実験室',
+        description: '研究棟3F',
+        number: '341'
+    },
+    {
+        name: '教員室',
+        description: '研究棟3F',
+        number: '342'
+    },
+    {
+        name: '教員室',
+        description: '研究棟3F',
+        number: '343'
+    },
+    {
+        name: '研究室・実験室',
+        description: '研究棟3F',
+        number: '344'
+    },
+    {
+        name: '研究室・実験室',
+        description: '研究棟3F',
+        number: '345'
+    },
+    {
+        name: '教員室',
+        description: '研究棟3F',
+        number: '346'
+    },
+    {
+        name: '教員室',
+        description: '研究棟3F',
+        number: '347'
+    },
+    {
+        name: '研究室・実験室',
+        description: '研究棟3F',
+        number: '348'
+    },
+    {
+        name: '中講義室M11',
+        description: '研究棟3F',
+        number: '361'
+    },
+    {
+        name: '中講義室M12',
+        description: '研究棟3F',
+        number: '362'
+    },
+    {
+        name: '研究室・実験室・小講義室(S9,S10)',
+        description: '研究棟3F',
+        number: '363'
+    },
+    {
+        name: '小講義室(S11,S12)',
+        description: '研究棟3F',
+        number: '364'
     },
     {
         name: '中講義室M8',
@@ -526,6 +666,21 @@ const rows = [
         description: '講義棟2F',
         number: '210'
     },
+    {
+            name: '講堂',
+            description: '講堂',
+            number: 'Aud'
+    },
+    {
+            name: '控室(1)',
+            description: '講堂',
+            number: 'WR1'
+    },
+    {
+            name: '控室(2)',
+            description: '講堂',
+            number: 'WR2'
+    }
 ]
 
 export default {
