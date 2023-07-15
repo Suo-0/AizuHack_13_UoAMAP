@@ -83,7 +83,7 @@ export default {
       selectedItem: null
     }
   },
-  components: { SearchResult, Mapping },
+  components: { SearchResult, Mapping, Menu },
   methods: {
     openDialog(item) {
       this.selectedItem = item

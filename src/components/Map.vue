@@ -2,7 +2,7 @@
   
   <div>
     <div class="q-pa-md q-gutter-sm">
-      <q-btn label="Close Icon" color="primary" @click="icon = true" />
+      
 
       <q-dialog v-model="icon">
         <q-card style="width: 800px; max-width: 100vw;">

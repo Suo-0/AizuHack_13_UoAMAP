@@ -5,7 +5,7 @@
                 <q-list style="min-width: 100px">
                     <div class="MENU">
                         <q-item clickable>
-                            <q-item-section @click="handleItemClick">{{ label }}
+                            <q-item-section @click="rireki">
                                 🕒履歴
                             </q-item-section>
                         </q-item>
@@ -35,16 +35,8 @@
     </q-toolbar>
 </template>
 
-
-
 <script>
 export default {
-    props: ['label'],
-    methods: {
-        handleItemClick() {
-            // ボタンがクリックされたときの処理
-        }
-    },
     setup() {
         return {
             simple: [
