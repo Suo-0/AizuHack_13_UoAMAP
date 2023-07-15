@@ -23,6 +23,12 @@
           </q-menu>
         </q-btn>
 
+        <div class="q-pa-md" style="max-width: 300px">
+          <div class="q-gutter-md">
+            <q-select filled v-model="model" :options="options" label="Filled" use-chips stack-chips />
+          </div>
+        </div>
+
         <q-toolbar-title>
           <q-avatar>
             <img src="./assets/image/uoa-icon.jpg">
@@ -38,7 +44,8 @@
           <div class="q-gutter-y-md column" style="width: 400px; max-width: 100%">
             <q-toolbar class="bg-primary text-white rounded-borders justify-center">
 
-              <q-input dark dense standout v-model="text" input-class="text-left custom-input-class" class="q-ml-md" style="width: 100%;">
+              <q-input dark dense standout v-model="text" input-class="text-left custom-input-class" class="q-ml-md"
+                style="width: 100%;">
                 <template v-slot:append>
                   <q-icon v-if="text === ''" name="search" />
                   <q-icon v-else name="clear" class="cursor-pointer" @click="text = ''" />
@@ -60,10 +67,16 @@
   </q-layout>
 </template>
 
+
+
+
+
+
 <script>
 import { ref, watch } from 'vue'
 import SearchResult from './components/SearchResult.vue';
 import Mapping from './components/Map.vue';
+
 
 export default {
   setup() {
@@ -86,7 +99,11 @@ export default {
       rightDrawerOpen,
       toggleRightDrawer() {
         rightDrawerOpen.value = !rightDrawerOpen.value;
-      }
+      },
+      model: ref(null),
+      options: [
+        'Google', 'Facebook', 'Twitter', 'Apple', 'Oracle'
+      ]
     };
   },
   components: { SearchResult, Mapping }
