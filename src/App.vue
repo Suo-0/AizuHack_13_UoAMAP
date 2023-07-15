@@ -1,7 +1,7 @@
 <template>
   <q-layout view="hHh lpR fFf">
 
-    <q-header id="hoge" elevated class="bg-primary text-white" height-hint="98">
+    <q-header id="hoge" elevated class="text-white" style="background-color: #009999;" height-hint="98">
       <q-toolbar style="background-color: rgba(127, 255, 212, 0); max-width: fit-content;">
 
         <q-btn round dense flat icon="menu" class="q-mr-xs">
@@ -36,9 +36,9 @@
       <q-tabs class="absolute-center" style="background-color: rgba(240, 255, 255, 0); width: 600px;">
         <div class="q-pa-md">
           <div class="q-gutter-y-md column" style="width: 400px; max-width: 100%">
-            <q-toolbar class="bg-primary text-white rounded-borders justify-center">
+            <q-toolbar class="text-white rounded-borders justify-center">
 
-              <q-input dark dense standout v-model="text" input-class="text-left custom-input-class" class="q-ml-md" style="width: 100%;">
+              <q-input dark dense standout v-model="text" input-class="text-left custom-input-class" class="q-ml-md" style="background-color: #36d0d05c; width: 100%;">
                 <template v-slot:append>
                   <q-icon v-if="text === ''" name="search" />
                   <q-icon v-else name="clear" class="cursor-pointer" @click="text = ''" />
@@ -50,9 +50,10 @@
         </div>
       </q-tabs>
     </q-header>
-      
-    <q-page-container >
-      <SearchResult />
+
+    <q-page-container>
+      <router-view />
+      <SearchResult :filter="text" />
       <Mapping />
     </q-page-container>
 
@@ -61,7 +62,7 @@
 </template>
 
 <script>
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import SearchResult from './components/SearchResult.vue';
 import Mapping from './components/Map.vue';
 
@@ -69,8 +70,16 @@ export default {
   setup() {
     const leftDrawerOpen = ref(false);
     const rightDrawerOpen = ref(false);
+    const text = ref("");
+    const filter = ref("");
+
+    watch(text, (newValue) => {
+      filter.value = newValue;
+    });
+
     return {
-      text: ref(""),
+      text,
+      filter,
       leftDrawerOpen,
       toggleLeftDrawer() {
         leftDrawerOpen.value = !leftDrawerOpen.value;
