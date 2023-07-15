@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="q-pa-md q-gutter-sm">
-      <q-btn label="Close Icon" color="primary" @click="icon = true" />
+      
 
       <q-dialog v-model="icon">
         <q-card style="width: 800px; max-width: 100vw;">
@@ -16,11 +16,10 @@
               <div id="screen-log" class="log-container">
                 Screen X/Y: {{ screenX }}, {{ screenY }}
                 Client X/Y: {{ clientX }}, {{ clientY }}
+                Pin X/Y: {{ selectedItem.x }}, {{ selectedItem.y }}
               </div>
             </div>
           </div>
-          <p>{{ selectedItem.x }}</p>
-          <p>{{ selectedItem.y }}</p>
         </q-card>
       </q-dialog>
 
@@ -119,7 +118,7 @@ export default {
 .log-container {
   padding: 8px;
   margin-top: 10px;
-  position: absolute;
+
   bottom: 0;
   left: 0;
   width: 100%;
