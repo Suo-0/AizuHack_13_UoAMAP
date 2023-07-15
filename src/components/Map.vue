@@ -19,6 +19,8 @@
               </div>
             </div>
           </div>
+          <p>{{ selectedItem.x }}</p>
+          <p>{{ selectedItem.y }}</p>
         </q-card>
       </q-dialog>
 
@@ -27,10 +29,18 @@
 </template>
 
 <script>
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
 
 export default {
-  setup() {
+  props: {
+    selectedItem: {
+      type: Object,
+      default: null
+    },
+
+
+  },
+  setup(props) {
     const icon = ref(false);
     const pins = ref([]);
     const screenX = ref(0);
@@ -47,12 +57,21 @@ export default {
       pins.value = [{ x, y }];
     }
 
+    function addPin2(x, y) {
+      pins.value = [{ x, y }];
+    }
+
     function logMousePosition(event) {
       screenX.value = event.screenX;
       screenY.value = event.screenY;
       clientX.value = event.clientX;
       clientY.value = event.clientY;
     }
+
+    watch(() => props.selectedItem, (newValue) => {
+      icon.value = true;
+      addPin2(newValue.x, newValue.y);
+    })
 
     return {
       icon,

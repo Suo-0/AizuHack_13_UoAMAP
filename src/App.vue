@@ -38,7 +38,8 @@
           <div class="q-gutter-y-md column" style="width: 400px; max-width: 100%">
             <q-toolbar class="text-white rounded-borders justify-center">
 
-              <q-input dark dense standout v-model="text" input-class="text-left custom-input-class" class="q-ml-md" style="background-color: #36d0d05c; width: 100%;">
+              <q-input dark dense standout v-model="text" input-class="text-left custom-input-class" class="q-ml-md"
+                style="background-color: #36d0d05c; width: 100%;">
                 <template v-slot:append>
                   <q-icon v-if="text === ''" name="search" />
                   <q-icon v-else name="clear" class="cursor-pointer" @click="text = ''" />
@@ -53,12 +54,11 @@
 
     <q-page-container>
       <router-view />
-      <SearchResult :filter="text" />
-      <Mapping />
+      <SearchResult @itemClick="openDialog" :filter="text" />
+      <Mapping :selectedItem="selectedItem" />
     </q-page-container>
 
   </q-layout>
-  
 </template>
 
 <script>
@@ -90,7 +90,17 @@ export default {
       }
     };
   },
-  components: { SearchResult, Mapping }
+  data() {
+    return {
+      selectedItem: null
+    }
+  },
+  components: { SearchResult, Mapping },
+  methods: {
+    openDialog(item) {
+      this.selectedItem = item
+    }
+  }
 }
 
 </script>
