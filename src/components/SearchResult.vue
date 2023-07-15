@@ -79,12 +79,16 @@ const rows = [
   {
     name: 'コンピュータ演習室(std3)',
     description: '講義棟1F',
-    number: '101'
+    number: '101',
+    x: 690,
+    y: 520
   },
   {
     name: 'コンピュータ演習室(std4)',
     description: '講義棟1F',
-    number: '102'
+    number: '102',
+    x: 690,
+    y: 450
   },
   {
     name: 'コンピュータ演習室(std5)',
@@ -96,7 +100,9 @@ const rows = [
   {
     name: 'コンピュータ演習室(std6) ',
     description: '研究棟1F',
-    number: '106'
+    number: '106',
+    x: 660,
+    y: 390
   },
   {
     name: '研究室・実験室',
@@ -236,7 +242,9 @@ const rows = [
   {
     name: 'Geek Dojo',
     description: '研究棟1F',
-    number: '161'
+    number: '161',
+    x: 570,
+    y: 330
   },
   {
     name: 'SRLU2(ジム)',
@@ -371,7 +379,9 @@ const rows = [
   {
     name: '修学支援室',
     description: '研究棟2F',
-    number: '246-E'
+    number: '246-E',
+    x: 390,
+    y: 520
   },
   {
     name: '実験室',
@@ -426,7 +436,9 @@ const rows = [
   {
     name: 'iLab1',
     description: '研究棟2F',
-    number: '277'
+    number: '277',
+    x: 560,
+    y: 330
   },
   {
     name: '語学研究センター事務室',
@@ -436,7 +448,9 @@ const rows = [
   {
     name: 'iLab2',
     description: '研究棟2F',
-    number: '279'
+    number: '279',
+    x: 525,
+    y: 335
   },
   {
     name: 'CALL2',
@@ -571,12 +585,16 @@ const rows = [
   {
     name: '中講義室M11',
     description: '研究棟3F',
-    number: '361'
+    number: '361',
+    x: 600,
+    y: 570
   },
   {
     name: '中講義室M12',
     description: '研究棟3F',
-    number: '362'
+    number: '362',
+    x: 630,
+    y: 570
   },
   {
     name: '研究室・実験室・小講義室(S9,S10)',
