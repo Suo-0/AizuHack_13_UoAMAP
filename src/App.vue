@@ -33,21 +33,19 @@
 
       </q-toolbar>
 
-      <q-tabs class="absolute-center" style="background-color: rgba(240, 255, 255, 0); width: 600px;">
-        <div class="q-pa-md">
-          <div class="q-gutter-y-md column" style="width: 400px; max-width: 100%">
-            <q-toolbar class="text-white rounded-borders justify-center">
+      <q-tabs class="" style="background-color: rgba(240, 255, 255, 0); width: 600px;">
+        <div class="q-gutter-y-md column" style="width: 100%;max-width: 400px;">
+          <q-toolbar class="text-white rounded-borders justify-center">
 
-              <q-input dark dense standout v-model="text" input-class="text-left custom-input-class" class="q-ml-md"
-                style="background-color: #36d0d05c; width: 100%;">
-                <template v-slot:append>
-                  <q-icon v-if="text === ''" name="search" />
-                  <q-icon v-else name="clear" class="cursor-pointer" @click="text = ''" />
-                </template>
-              </q-input>
+            <q-input dark dense standout v-model="text" input-class="text-left custom-input-class" class="q-ml-md"
+              style="background-color: #36d0d05c; width: 100%;">
+              <template v-slot:append>
+                <q-icon v-if="text === ''" name="search" />
+                <q-icon v-else name="clear" class="cursor-pointer" @click="text = ''" />
+              </template>
+            </q-input>
 
-            </q-toolbar>
-          </div>
+          </q-toolbar>
         </div>
       </q-tabs>
     </q-header>
