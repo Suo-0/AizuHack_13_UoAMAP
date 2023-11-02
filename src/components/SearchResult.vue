@@ -21,7 +21,8 @@
 
 
 
-  <div class="q-pa-sm" style="background-color: #95e7ca8b; width: 720px; margin: 0 auto; margin-top: 50px;">
+  <div class="q-pa-sm"
+    style="background-color: #95e7ca8b; width: 720px; max-width: 100vw; margin: 0 auto; margin-top: 50px;">
     <q-scroll-area style="height: 500px;">
       <q-table style="background-color: #cedbf236;" :grid="$q.screen.xs" flat bordered :rows="rows" :columns="columns"
         row-key="name" :filter="filter" hide-header hide-pagination :pagination="pagination" :rows-per-page-options="[0]"
