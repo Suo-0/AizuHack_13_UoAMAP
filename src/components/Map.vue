@@ -5,7 +5,7 @@
 
       <q-dialog v-model="icon">
         <q-card style="width: 820px; max-width: 100vw;" id="img-card">
-          <div class="my-dialog-content">
+          <div class="my-dialog-content" style="width: 100%;">
             <div id="map" @mousemove="logMousePosition" @click="addPin" style="margin: 0 auto" ref="map">
               <img src="../assets/image/zentai.jpg" class="map_image">
               <div v-for=" (pin, index) in pins" :key="index" class="pin"
