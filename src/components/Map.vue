@@ -5,9 +5,10 @@
 
       <q-dialog v-model="icon">
         <q-card style="width: 820px; max-width: 100vw;" id="img-card">
-          <div class="my-dialog-content">
-            <div id="map" @mousemove="logMousePosition" @click="addPin" style="margin: 0 auto">
-              <div v-for="(pin, index) in pins" :key="index" class="pin"
+          <div class="my-dialog-content" style="width: 100%;overflow: hidden;">
+            <div id="map" @mousemove="logMousePosition" @click="addPin" style="margin: 0 auto" ref="map">
+              <img src="../assets/image/zentai.jpg" class="map_image">
+              <div v-for=" (pin, index) in pins" :key="index" class="pin"
                 :style="{ left: pin.x + 'px', top: pin.y + 'px' }">
                 <span class="pin-label">{{ roomname }}, {{ roomdescription }}</span>
               </div>
@@ -29,7 +30,7 @@
 </template>
 
 <script>
-import { ref, watch } from 'vue';
+import { onUpdated, ref, watch } from 'vue';
 
 export default {
   props: {
@@ -41,6 +42,9 @@ export default {
 
   },
   setup(props) {
+    const map = ref(null);
+    const width = ref(820);
+
     const icon = ref(false);
     const pins = ref([]);
     const screenX = ref(0);
@@ -74,12 +78,20 @@ export default {
       clientY.value = event.clientY;
     }
 
+    onUpdated(() => {
+      width.value = map.value?.clientWidth ?? width.value;
+      const rate = width.value / 820;
+      pins.value = [{ x: pins.value[0].x * rate, y: pins.value[0].y * rate }];
+      console.log(width.value)
+    });
+
     watch(() => props.selectedItem, (newValue) => {
       icon.value = true;
       addPin2(newValue.x, newValue.y, newValue.name, newValue.description);
     })
 
     return {
+      map,
       icon,
       pins,
       screenX,
@@ -97,12 +109,13 @@ export default {
 <style>
 #map {
   position: relative;
-  width: 820px;
-  height: 611px;
-  background-image: url("../assets/image/zentai.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
+  width: 100%;
   cursor: crosshair;
+}
+
+.map_image {
+  width: 100%;
+  object-fit: contain;
 }
 
 .pin {
